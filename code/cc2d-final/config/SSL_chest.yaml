@@ -1,0 +1,26 @@
+# CC2D SSL settings for the final chest fine-stage model.
+# Chest benefits from larger context and local search because rib/edge texture is repetitive.
+train:
+  batch_size : 16
+  num_workers : 8
+  learning_rate : 0.001
+  coarse_decay_step : 10
+  coarse_decay_gamma : 0.1
+  coarse_total_epochs : 30
+  coarse_random_epochs : 10
+  fine_decay_step : 70
+  fine_decay_gamma : 0.1
+  fine_total_epochs : 250
+  fine_random_epochs : 150
+  fine_probmap_start_epoch : 0
+  fine_sample_margin_ratio : 0.0
+  fine_crop_padding : replicate
+  # Crop a larger source window, then resize back to input_size for the network.
+  fine_crop_context_size : [640, 640]
+  save_seq : 5
+  loss_lambda : 0.001
+  input_size : [384, 384]
+  patch_size : [192, 192]
+test:
+  id_oneshot : [165]
+  fine_search_radius : 64

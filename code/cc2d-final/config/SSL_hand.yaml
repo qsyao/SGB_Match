@@ -1,0 +1,26 @@
+# CC2D SSL settings for the final hand fine-stage model.
+# Hand remains stable with the original clamped crop and global fine search.
+train:
+  batch_size : 16
+  num_workers : 4
+  learning_rate : 0.001
+  coarse_decay_step : 70
+  coarse_decay_gamma : 0.1
+  coarse_total_epochs : 160
+  coarse_random_epochs : 100
+  fine_decay_step : 70
+  fine_decay_gamma : 0.1
+  fine_total_epochs : 250
+  fine_random_epochs : 150
+  fine_probmap_start_epoch : -1
+  fine_sample_margin_ratio : 0.15
+  fine_crop_padding : clamp
+  fine_crop_context_size : []
+  save_seq : 5
+  loss_lambda : 0.001
+  input_size : [384, 384]
+  patch_size : [288, 288]
+test:
+  id_oneshot : [10]
+  # -1 keeps the historical global argmax over each fine crop.
+  fine_search_radius : -1

@@ -1,0 +1,27 @@
+# CC2D SSL settings for the final head fine-stage model.
+train:
+  batch_size : 8
+  num_workers : 4
+  learning_rate : 0.001
+  coarse_decay_step : 70
+  coarse_decay_gamma : 0.1
+  coarse_total_epochs : 160
+  coarse_random_epochs : 100
+  fine_decay_step : 70
+  fine_decay_gamma : 0.1
+  fine_total_epochs : 250
+  fine_random_epochs : 150
+  save_seq : 5
+  loss_lambda : 0.001
+  input_size : [384, 384]
+  patch_size : [192, 192]
+  # Empty context keeps the fine source crop at the network input size.
+  fine_crop_context_size : []
+  fine_crop_padding : replicate
+  # Start probmap-guided fine sampling immediately; the head run was stable with it.
+  fine_probmap_start_epoch : 0
+  fine_sample_margin_ratio : 0.0
+test:
+  id_oneshot : [125]
+  # Local fine search radius in crop pixels. -1 means global argmax.
+  fine_search_radius : 48

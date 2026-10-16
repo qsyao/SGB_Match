@@ -1,0 +1,5 @@
+dataset:
+  dataset_pth : '../../dataset/Cephalometric/'
+  num_landmarks : 19
+  eval_radius : [2, 2.5, 3, 4, 6, 8]
+  original_size: [2400, 1935]

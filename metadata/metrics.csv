@@ -1,0 +1,5 @@
+dataset,canonical_run,source_run,best_epoch,reported_mre,validated_mre,mre_delta,validated_sdr
+head,cc2d_head_fine_sota,head_fix_search48_prob0,179,1.7728310624131516,1.7728310624131516,0.0,"2mm 70.27 / 2.5mm 78.23 / 3mm 83.41 / 4mm 90.55 / 6mm 97.12 / 8mm 99.01"
+hand,cc2d_hand_fine_sota,test_coarse_hand,9,1.1773761240296556,1.1773761240296556,0.0,"2mm 86.52 / 4mm 96.77 / 7mm 98.84 / 10mm 99.24"
+chest,cc2d_chest_fine_sota,chest_fix_ctx640_search64_prob0,14,5.458034264865224,5.458034264865224,0.0,"3mm 32.33 / 6mm 69.33 / 9mm 87.00 / 12mm 93.67"
+leg,cc2d_leg_fine_sota,leg_fix_ctx1024_search96_prob0,89,2.7923235903759585,2.7926142260788374,0.0002906357028789053,"2mm 50.00 / 4mm 81.64 / 6mm 92.21 / 8mm 94.86"

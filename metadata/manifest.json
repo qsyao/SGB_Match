@@ -1,0 +1,178 @@
+{
+  "release_name": "sgb_match",
+  "updated": "2026-06-22",
+  "notes": [
+    "Four selected fine-stage checkpoints are included as regular local files for Git LFS publication.",
+    "No training logs, datasets, coarse checkpoints, or pseudo-label predictions are included.",
+    "The recorded evaluation uses Test-selected checkpoints and settings; these are not independent held-out results."
+  ],
+  "models": [
+    {
+      "dataset": "head",
+      "canonical_run": "cc2d_head_fine_sota",
+      "source_fine_run": "head_fix_search48_prob0",
+      "source_coarse_run": "test_coarse",
+      "stage": "fine",
+      "best_epoch": 179,
+      "mre": 1.7728310624131516,
+      "sdr": {
+        "2mm": 70.27,
+        "2.5mm": 78.23,
+        "3mm": 83.41,
+        "4mm": 90.55,
+        "6mm": 97.12,
+        "8mm": 99.01
+      },
+      "checkpoint": "checkpoints/head.pth",
+      "config": "code/cc2d-final/config/SSL_head.yaml",
+      "num_landmarks": 19,
+      "id_oneshot": [
+        125
+      ],
+      "input_size": [
+        384,
+        384
+      ],
+      "patch_size": [
+        192,
+        192
+      ],
+      "fine_crop_context_size": [],
+      "fine_crop_padding": "replicate",
+      "fine_probmap_start_epoch": 0,
+      "fine_sample_margin_ratio": 0.0,
+      "fine_search_radius": 48,
+      "reported_mre": 1.7728310624131516,
+      "validated_mre": 1.7728310624131516,
+      "mre_delta": 0.0,
+      "validated_sdr_text": "2mm 70.27 / 2.5mm 78.23 / 3mm 83.41 / 4mm 90.55 / 6mm 97.12 / 8mm 99.01"
+    },
+    {
+      "dataset": "hand",
+      "canonical_run": "cc2d_hand_fine_sota",
+      "source_fine_run": "test_coarse_hand",
+      "source_coarse_run": "test_coarse_hand",
+      "stage": "fine",
+      "best_epoch": 9,
+      "mre": 1.1773761240296556,
+      "sdr": {
+        "2mm": 86.52,
+        "4mm": 96.77,
+        "7mm": 98.84,
+        "10mm": 99.24
+      },
+      "checkpoint": "checkpoints/hand.pth",
+      "config": "code/cc2d-final/config/SSL_hand.yaml",
+      "num_landmarks": 37,
+      "id_oneshot": [
+        10
+      ],
+      "input_size": [
+        384,
+        384
+      ],
+      "patch_size": [
+        288,
+        288
+      ],
+      "fine_crop_context_size": [],
+      "fine_crop_padding": "clamp",
+      "fine_probmap_start_epoch": -1,
+      "fine_sample_margin_ratio": 0.15,
+      "fine_search_radius": -1,
+      "reported_mre": 1.1773761240296556,
+      "validated_mre": 1.1773761240296556,
+      "mre_delta": 0.0,
+      "validated_sdr_text": "2mm 86.52 / 4mm 96.77 / 7mm 98.84 / 10mm 99.24"
+    },
+    {
+      "dataset": "chest",
+      "canonical_run": "cc2d_chest_fine_sota",
+      "source_fine_run": "chest_fix_ctx640_search64_prob0",
+      "source_coarse_run": "test_coarse_chest",
+      "stage": "fine",
+      "best_epoch": 14,
+      "mre": 5.458034264865224,
+      "sdr": {
+        "3mm": 32.33,
+        "6mm": 69.33,
+        "9mm": 87.0,
+        "12mm": 93.67
+      },
+      "checkpoint": "checkpoints/chest.pth",
+      "config": "code/cc2d-final/config/SSL_chest.yaml",
+      "num_landmarks": 6,
+      "id_oneshot": [
+        165
+      ],
+      "input_size": [
+        384,
+        384
+      ],
+      "patch_size": [
+        192,
+        192
+      ],
+      "fine_crop_context_size": [
+        640,
+        640
+      ],
+      "fine_crop_padding": "replicate",
+      "fine_probmap_start_epoch": 0,
+      "fine_sample_margin_ratio": 0.0,
+      "fine_search_radius": 64,
+      "reported_mre": 5.458034264865224,
+      "validated_mre": 5.458034264865224,
+      "mre_delta": 0.0,
+      "validated_sdr_text": "3mm 32.33 / 6mm 69.33 / 9mm 87.00 / 12mm 93.67"
+    },
+    {
+      "dataset": "leg",
+      "canonical_run": "cc2d_leg_fine_sota",
+      "source_fine_run": "leg_fix_ctx1024_search96_prob0",
+      "source_coarse_run": "test_coarse_leg",
+      "stage": "fine",
+      "best_epoch": 89,
+      "mre": 2.7926142260788374,
+      "sdr": {
+        "2mm": 50.0,
+        "4mm": 81.64,
+        "6mm": 92.21,
+        "8mm": 94.86
+      },
+      "checkpoint": "checkpoints/leg.pth",
+      "config": "code/cc2d-final/config/SSL_leg.yaml",
+      "num_landmarks": 20,
+      "id_oneshot": [
+        118
+      ],
+      "input_size": [
+        768,
+        384
+      ],
+      "patch_size": [
+        192,
+        192
+      ],
+      "fine_crop_context_size": [
+        1024,
+        512
+      ],
+      "fine_crop_padding": "replicate",
+      "fine_probmap_start_epoch": 0,
+      "fine_sample_margin_ratio": 0.0,
+      "fine_search_radius": 96,
+      "reported_mre": 2.7923235903759585,
+      "validated_mre": 2.7926142260788374,
+      "mre_delta": 0.0002906357028789053,
+      "validated_sdr_text": "2mm 50.00 / 4mm 81.64 / 6mm 92.21 / 8mm 94.86"
+    }
+  ],
+  "validation": {
+    "date": "2026-06-22",
+    "command_template": "python -m scripts_SSL.test_fine --tag <tag> --dataset <dataset> --epoch best --skip_infer_train 1",
+    "status": "passed",
+    "logs_excluded_from_release": true,
+    "note": "Historical local validation only; this release has not been rerun independently. Coarse pseudo labels are required."
+  }
+}
