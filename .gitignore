@@ -4,9 +4,20 @@ __pycache__/
 .mypy_cache/
 .DS_Store
 .vscode/
+.venv/
+.env
+.env.*
 dataset/
 final_runs/
+runs/
 logs/
+outputs/
+papers/
+scripts_TPL/
+scripts_sota/
+*.md
+!README.md
+*.tex
 *.log
 *.out
 *.err
@@ -19,5 +30,6 @@ logs/
 *.npz
 *.pt
 *.ckpt
+*.safetensors
 *.pth
 !checkpoints/*.pth
